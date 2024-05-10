@@ -45,7 +45,6 @@ export default function Header() {
               {
                 nav__link.map((item, index) => (
                   <NavLink
-
                     className={navClass => navClass.isActive ? "active__menu" : ""}
                     key={index}
                     to={item.path}
