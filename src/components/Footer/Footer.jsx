@@ -54,7 +54,7 @@ export default function Footer() {
         </Row>
         <Row className='mt-5'>
           <Col lg='6' md='6'>
-            <p>Copyright - 2024 , website made by sina derikvand . All rights reserved</p>
+            <p className='copyright__text'>Copyright - 2024 , website made by sina derikvand . All rights reserved</p>
           </Col>
           <Col lg='6' md='6'>
             <div className='social__links d-flex align-items-center justify-content-end gap-4'>

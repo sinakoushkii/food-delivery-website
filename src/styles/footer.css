@@ -1,5 +1,6 @@
 .footer {
-    padding: 50px 0px;
+    padding-top: 50px;
+    padding-bottom: 30px;
     background: #fde4e4;
 }
 
@@ -53,7 +54,7 @@
     outline: none;
 }
 .newsletter span{
-    background: #212245;
+    background: #df2020;
     padding: 5px 30px;
     border-radius: 5px;
 }
@@ -65,4 +66,14 @@
 }
 .newsletter input::placeholder{
     color: #212245e4;
+}
+.social__links span i{
+    padding: 5px;
+    background: #df2020;
+    color: #fff;
+    border-radius: 50%;
+}
+.copyright__text{
+    font-size: 0.8rem;
+    color: #df2020;
 }
