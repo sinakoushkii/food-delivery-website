@@ -48,7 +48,7 @@ export default function Footer() {
             <p>Subscribe our newsletter</p>
             <div className='newsletter'>
               <input type="email" placeholder='Enter your email' />
-              <span><i class="ri-send-plane-fill"></i></span>
+              <span><i className="ri-send-plane-fill"></i></span>
             </div>
           </Col>
         </Row>
@@ -61,22 +61,22 @@ export default function Footer() {
               <p className='m-0'>Follow:</p>
               <span>
                 <Link to='http://www.facebook.com'>
-                  <i class="ri-facebook-circle-fill"></i>
+                  <i className="ri-facebook-circle-fill"></i>
                 </Link>
               </span>
               <span>
                 <Link to='http://www.github.com'>
-                  <i class="ri-github-fill"></i>
+                  <i className="ri-github-fill"></i>
                 </Link>
               </span>
               <span>
                 <Link to='http://www.youtube.com'>
-                <i class="ri-youtube-line"></i>
+                <i className="ri-youtube-line"></i>
                 </Link>
               </span>
               <span>
                 <Link to='http://www.linkedin.com'>
-                <i class="ri-linkedin-box-fill"></i>
+                <i className="ri-linkedin-box-fill"></i>
                 </Link>
               </span>
             </div>
