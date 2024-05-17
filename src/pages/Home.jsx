@@ -4,9 +4,14 @@ import { Container, Row, Col } from 'reactstrap'
 import heroImage from '../assets/images/hero.png'
 import { Link } from 'react-router-dom'
 import Category from '../components/Ui/category/Category'
+import products from '../assets/fake-data/product'
+import ProductCart from '../components/Ui/productCart/ProductCart'
 import featureImg01 from '../assets/images/service-01.png'
 import featureImg02 from '../assets/images/service-02.png'
 import featureImg03 from '../assets/images/service-03.png'
+import foodCategoryImg01 from '../assets/images/hamburger.png'
+import foodCategoryImg02 from '../assets/images/pizza.png'
+import foodCategoryImg03 from '../assets/images/bread.png'
 import '../styles/hero-section.css'
 import '../styles/home.css'
 
@@ -32,6 +37,7 @@ export default function Home() {
       Minus: 'adipisicing'
     },
   ]
+
   return (
     <Helmet title='home'>
       <section>
@@ -99,12 +105,46 @@ export default function Home() {
             </Col>
             {
               featureData.map((item, index) => (
-                <Col lg='4' md='4'>
-                  <div className='feature__item' key={index}>
-                    <img src={item.imgUrl} alt="feature-image" />
-                    <h5>{item.title}</h5>
+                <Col key={index} className='mt-5' lg='4' md='4'>
+                  <div className='feature__item text-center px-5 py-3'>
+                    <img className='w-25 mb-3' src={item.imgUrl} alt="feature-image" />
+                    <h5 className='fw-bold mb-3'>{item.title}</h5>
                     <p>{item.description}</p>
                   </div>
+                </Col>
+              ))
+            }
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col className='text-center' lg='12'>
+              <h2>Popular Foods</h2>
+            </Col>
+            <Col lg='12'>
+              <div className='food__category d-flex align-items-center justify-content-center gap-4'>
+                <button className='foodBtnActive'>All</button>
+                <button className='d-flex align-items-center gap-2'>
+                  Burger
+                  <img src={foodCategoryImg01} alt="foodCategory" />
+                </button>
+                <button className='d-flex align-items-center gap-2'>
+                  Pizza
+                  <img src={foodCategoryImg02} alt="foodCategory" />
+                </button>
+                <button className='d-flex align-items-center gap-2'>
+                  Bread
+                  <img src={foodCategoryImg03} alt="foodCategory" />
+                </button>
+              </div>
+            </Col>
+            {
+              products.map(item => (
+                <Col lg='3' md='4' key={item.id}>
+                  <ProductCart item={item}/>
                 </Col>
               ))
             }

@@ -5,3 +5,29 @@
 .feature__text{
     color: #777;
 }
+.feature__item p{
+    color: #777;
+}
+.food__category{
+    background-color: #fd2020;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+    border-radius: 8px;
+}
+.food__category button{
+    border: none;
+    outline: none;
+    padding: 7px 20px;
+    background: transparent;
+    color: #fff;
+}
+.food__category button img{
+    width: 20px;
+    height: 20px;
+}
+.foodBtnActive{
+    color: #fd2020 !important;
+    background-color: #fff !important;
+    border-radius: 7px;
+}
