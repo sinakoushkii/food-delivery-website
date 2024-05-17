@@ -143,7 +143,7 @@ export default function Home() {
             </Col>
             {
               products.map(item => (
-                <Col lg='3' md='4' key={item.id}>
+                <Col className='mt-5' lg='3' md='4' key={item.id}>
                   <ProductCart item={item}/>
                 </Col>
               ))

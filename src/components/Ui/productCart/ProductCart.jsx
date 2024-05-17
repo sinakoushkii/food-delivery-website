@@ -1,9 +1,9 @@
 import React from 'react'
-import productImg from '../../../assets/images/product_01.1.jpg'
 import { Link } from 'react-router-dom'
+import '../../../styles/productCard.css'
 
-export default function ProductCart({item}) {
-    const {id, title, image01, price }=item
+export default function ProductCart({ item }) {
+    const { id, title, image01, price } = item
 
     return (
         <div className='product__item'>
@@ -12,9 +12,11 @@ export default function ProductCart({item}) {
             </div>
             <div className='product__content'>
                 <h5><Link to={`/foods/${id}`}>{title}</Link></h5>
-                <div>
+                <div className='d-flex align-items-center justify-content-between'>
                     <span className='product__price'>${price}</span>
-                    <button className='addtoCart__btn'>Add to Cart</button>
+                    <button className='addtoCart__btn'>
+                        <span>Add to Cart</span>
+                    </button>
                 </div>
             </div>
         </div>
