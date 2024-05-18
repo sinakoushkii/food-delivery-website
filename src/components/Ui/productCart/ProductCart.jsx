@@ -13,7 +13,7 @@ export default function ProductCart({ item }) {
             </div>
             <div className='product__content'>
                 <h5><Link to={`/foods/${id}`}>{title}</Link></h5>
-                <div className='d-flex align-items-center justify-content-between'>
+                <div className='product__btn-wrapper'>
                     <span className='product__price'>${price}</span>
                     <button className='addtoCart__btn'>
                         <span>Add to Cart</span>

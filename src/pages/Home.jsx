@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Helmet from '../components/Helmet/Helmet'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
 import heroImage from '../assets/images/hero.png'
 import { Link } from 'react-router-dom'
 import Category from '../components/Ui/category/Category'
@@ -12,6 +12,7 @@ import featureImg03 from '../assets/images/service-03.png'
 import foodCategoryImg01 from '../assets/images/hamburger.png'
 import foodCategoryImg02 from '../assets/images/pizza.png'
 import foodCategoryImg03 from '../assets/images/bread.png'
+import whyImg from '../assets/images/location.png'
 import '../styles/hero-section.css'
 import '../styles/home.css'
 
@@ -153,7 +154,7 @@ export default function Home() {
               <h2>Popular Foods</h2>
             </Col>
             <Col lg='12'>
-              <div className='food__category d-flex align-items-center justify-content-center gap-4'>
+              <div className='food__category gap-4'>
                 <button className={`${category === 'all' ? 'foodBtnActive' : ''}`} onClick={() => setCategory('all')}>All</button>
                 <button
                   onClick={() => setCategory('burger')}
@@ -185,6 +186,48 @@ export default function Home() {
           </Row>
         </Container>
       </section>
+
+      <section>
+        <Container>
+          <Row className='d-flex align-items-center'>
+            <Col lg='6' md='6'>
+              <img className='w-100' src={whyImg} alt='why-tasty-treat' />
+            </Col>
+
+            <Col lg='6' md='6'>
+              <div className='why__tasty-treat'>
+                <h2 className='tasty__treat-title mb-4'>Why tasty treat ?</h2>
+                <p className='tasty__treat-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, fuga porro quia dolorum nemo voluptate esse sunt, accusantium impedit reiciendis doloribus officia quod dicta, nesciunt eum corporis ipsum dolorem soluta.</p>
+
+                <ListGroup className='mt-4'>
+                  <ListGroupItem className='border-0 ps-0'>
+                    <p className='choose__us-title d-flex align-items-center gap-2'>
+                      <i className="ri-checkbox-circle-line"></i>
+                      Fresh and tasty foods
+                    </p>
+                    <p className='choose__us-description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, tempora.</p>
+                  </ListGroupItem>
+                  <ListGroupItem className='border-0 ps-0'>
+                  <p className='choose__us-title d-flex align-items-center gap-2'>
+                      <i className="ri-checkbox-circle-line"></i>
+                      High quality support
+                    </p>
+                    <p className='choose__us-description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, tempora.</p>
+                  </ListGroupItem>
+                  <ListGroupItem className='border-0 ps-0'>
+                  <p className='choose__us-title d-flex align-items-center gap-2'>
+                      <i className="ri-checkbox-circle-line"></i>
+                      Order from any location
+                    </p>
+                    <p className='choose__us-description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, tempora.</p>
+                  </ListGroupItem>
+                </ListGroup>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
     </Helmet>
   )
 }

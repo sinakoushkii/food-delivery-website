@@ -49,9 +49,10 @@
     cursor: pointer;
 }
 .newsletter input{
-    background: transparent;
+    width: 100%;
     border: none;
     outline: none;
+    background: transparent;
 }
 .newsletter span{
     background: #df2020;
@@ -76,4 +77,20 @@
 .copyright__text{
     font-size: 0.8rem;
     color: #df2020;
+}
+
+@media only screen and (max-width:350px){
+    .newsletter{
+        flex-wrap: wrap;
+    }
+    .newsletter span{
+        text-align: center;
+        width: 100%;
+    }
+    .newsletter input{
+        text-align: center;
+    }
+    .newsletter input::placeholder{
+        text-align: center;
+    }
 }

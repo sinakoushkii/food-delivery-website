@@ -1,33 +1,71 @@
-.feature__subtitle ,
-.feature__title span{
+.feature__subtitle,
+.feature__title span {
     color: #fd2020;
 }
-.feature__text{
+
+.feature__text {
     color: #777;
 }
-.feature__item p{
+
+.feature__item p {
     color: #777;
 }
-.food__category{
+
+.food__category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #fd2020;
     text-align: center;
     margin-top: 30px;
     padding: 20px 0;
     border-radius: 8px;
 }
-.food__category button{
+
+.food__category button {
     border: none;
     outline: none;
     padding: 7px 20px;
     background: transparent;
     color: #fff;
 }
-.food__category button img{
+
+.food__category button img {
     width: 20px;
     height: 20px;
 }
-.foodBtnActive{
+
+.foodBtnActive {
     color: #fd2020 !important;
     background-color: #fff !important;
     border-radius: 7px;
+}
+
+/* .tasty__treat-title {
+    color: #fd2020;
+} */
+
+.tasty__treat-description {
+    color: #777;
+    line-height: 28px;
+}
+
+.choose__us-title {
+    font-weight: 600;
+}
+
+.choose__us-title i {
+    font-weight: 500 !important;
+    color: #fd2020;
+}
+.choose__us-description{
+    color: #777;
+}
+
+@media only screen and (max-width:520px){
+    .food__category{
+        overflow-x: scroll;
+        justify-content: space-around;
+        padding-left: 10px;
+    }
 }
