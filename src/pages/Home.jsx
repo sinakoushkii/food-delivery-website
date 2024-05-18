@@ -50,16 +50,16 @@ export default function Home() {
         setAllProducts(products)
         break;
       case 'burger':
-        const burger = products.filter(product => product.category === 'Burger')
-        setAllProducts(burger)
+        content = products.filter(product => product.category === 'Burger')
+        setAllProducts(content)
         break;
       case 'pizza':
-        const pizza = products.filter(product => product.category === 'Pizza')
-        setAllProducts(pizza)
+        content = products.filter(product => product.category === 'Pizza')
+        setAllProducts(content)
         break;
       case 'bread':
-        const bread = products.filter(product => product.category === 'Bread')
-        setAllProducts(bread)
+        content = products.filter(product => product.category === 'Bread')
+        setAllProducts(content)
         break;
       default:
         setAllProducts(products)
@@ -154,22 +154,22 @@ export default function Home() {
             </Col>
             <Col lg='12'>
               <div className='food__category d-flex align-items-center justify-content-center gap-4'>
-                <button className='foodBtnActive' onClick={()=>setCategory('all')}>All</button>
-                <button 
-                onClick={()=>setCategory('burger')}
-                className='d-flex align-items-center gap-2'>
+                <button className={`${category === 'all' ? 'foodBtnActive' : ''}`} onClick={() => setCategory('all')}>All</button>
+                <button
+                  onClick={() => setCategory('burger')}
+                  className={`d-flex align-items-center gap-2 ${category === 'burger' ? 'foodBtnActive' : ''}`}>
                   Burger
                   <img src={foodCategoryImg01} alt="foodCategory" />
                 </button>
-                <button 
-                onClick={()=>setCategory('pizza')}
-                className='d-flex align-items-center gap-2'>
+                <button
+                  onClick={() => setCategory('pizza')}
+                  className={`d-flex align-items-center gap-2 ${category === 'pizza' ? 'foodBtnActive' : ''}`}>
                   Pizza
                   <img src={foodCategoryImg02} alt="foodCategory" />
                 </button>
-                <button 
-                onClick={()=>setCategory('bread')}
-                className='d-flex align-items-center gap-2'>
+                <button
+                  onClick={() => setCategory('bread')}
+                  className={`d-flex align-items-center gap-2  ${category === 'bread' ? 'foodBtnActive' : ''}`}>
                   Bread
                   <img src={foodCategoryImg03} alt="foodCategory" />
                 </button>
