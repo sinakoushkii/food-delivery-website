@@ -32,7 +32,7 @@ export default function Category() {
             <Row>
                 {
                     categoryData.map((item, index) => (
-                        <Col key={index} lg='3' md='4'>
+                        <Col key={index} lg='3' md='6'>
                             <div className='category-item d-flex align-items-center gap-2'>
                                 <div className='category-img'>
                                     <img src={item.imageUrl} alt="categoryImage" />
