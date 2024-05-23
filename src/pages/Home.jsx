@@ -13,8 +13,10 @@ import foodCategoryImg01 from '../assets/images/hamburger.png'
 import foodCategoryImg02 from '../assets/images/pizza.png'
 import foodCategoryImg03 from '../assets/images/bread.png'
 import whyImg from '../assets/images/location.png'
+import networkImg from '../assets/images/network.png'
 import '../styles/hero-section.css'
 import '../styles/home.css'
+import TestimonialSlider from '../components/Ui/slider/TestimonialSlider/'
 
 export default function Home() {
 
@@ -90,7 +92,7 @@ export default function Home() {
 
                 <div className='hero__btns d-flex align-items-center gap-5'>
                   <button className='order__btn d-flex align-items-center justify-content-between gap-1'>
-                    Order now
+                    <span>Order now</span>
                     <i className="ri-arrow-right-s-line"></i>
                   </button>
 
@@ -143,7 +145,7 @@ export default function Home() {
             </Col>
             {
               featureData.map((item, index) => (
-                <Col key={index} className='mt-5' lg='4' md='4'>
+                <Col key={index} className='mt-5' lg='4' md='6' sm='6'>
                   <div className='feature__item text-center px-5 py-3'>
                     <img className='w-25 mb-3' src={item.imgUrl} alt="feature-image" />
                     <h5 className='fw-bold mb-3'>{item.title}</h5>
@@ -257,7 +259,28 @@ export default function Home() {
         </Container>
       </section>
 
-      
+      {/* Testimonial */}
+      <section>
+        <Container>
+          <Row>
+            <Col md='12' lg='6'>
+              <div className='testimonial'>
+                <h5 className='testimonial__subtitle mb-4'>Testimonial</h5>
+                <h2 className='testimonial__title mb-4'>What our <span>customers</span> are saying ?</h2>
+                <p className='testimonial__description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque voluptates excepturi vel assumenda? Asperiores laudantium adipisci ad dolorem ratione in?
+                </p>
+                <div className='slider__wrapper'>
+                  <TestimonialSlider />
+                </div>
+              </div>
+            </Col>
+
+            <Col md='12' lg='6'>
+              <img className='w-100' src={networkImg} alt="networkImg" />
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </Helmet>
   )
 }
