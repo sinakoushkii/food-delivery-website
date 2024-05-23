@@ -42,6 +42,13 @@ export default function Home() {
 
   const [category, setCategory] = useState('all')
   const [allProducts, setAllProducts] = useState(products)
+  const [hotPizza, setHotPizza] = useState([])
+
+  useEffect(() => {
+    const filteredPizza = products.filter(product => product.category === 'Pizza')
+    const slicedPizza = filteredPizza.slice(0, 4)
+    setHotPizza(slicedPizza)
+  }, [])
 
   useEffect(() => {
     let content;
@@ -69,6 +76,7 @@ export default function Home() {
 
   return (
     <Helmet title='home'>
+      {/* Header */}
       <section>
         <Container>
           <Row className='align-items-center'>
@@ -122,6 +130,7 @@ export default function Home() {
         <Category />
       </section>
 
+      {/* Service */}
       <section>
         <Container>
           <Row>
@@ -147,6 +156,7 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Popular Foods */}
       <section>
         <Container>
           <Row>
@@ -187,6 +197,7 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Why tasty treat */}
       <section>
         <Container>
           <Row className='d-flex align-items-center'>
@@ -208,14 +219,14 @@ export default function Home() {
                     <p className='choose__us-description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, tempora.</p>
                   </ListGroupItem>
                   <ListGroupItem className='border-0 ps-0'>
-                  <p className='choose__us-title d-flex align-items-center gap-2'>
+                    <p className='choose__us-title d-flex align-items-center gap-2'>
                       <i className="ri-checkbox-circle-line"></i>
                       High quality support
                     </p>
                     <p className='choose__us-description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, tempora.</p>
                   </ListGroupItem>
                   <ListGroupItem className='border-0 ps-0'>
-                  <p className='choose__us-title d-flex align-items-center gap-2'>
+                    <p className='choose__us-title d-flex align-items-center gap-2'>
                       <i className="ri-checkbox-circle-line"></i>
                       Order from any location
                     </p>
@@ -228,6 +239,25 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Hot Pizza */}
+      <section className='pt-0 mt-0'>
+        <Container>
+          <Row>
+            <Col lg='12' className='text-center mb-5'>
+              <h2>Hot Pizza</h2>
+            </Col>
+
+            {hotPizza.map(pizza => (
+              <Col lg='3' md='4' key={pizza.id}>
+                <ProductCart item={pizza} />
+              </Col>
+            ))}
+
+          </Row>
+        </Container>
+      </section>
+
+      
     </Helmet>
   )
 }
