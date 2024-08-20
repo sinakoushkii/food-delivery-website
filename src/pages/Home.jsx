@@ -190,7 +190,7 @@ export default function Home() {
             </Col>
             {
               allProducts.map(item => (
-                <Col className='mt-5' lg='3' md='4' key={item.id}>
+                <Col className='mt-5' lg='3' md='4' sm='6' xs='6' key={item.id}>
                   <ProductCart item={item} />
                 </Col>
               ))
@@ -276,7 +276,7 @@ export default function Home() {
             </Col>
 
             <Col md='12' lg='6'>
-              <img className='w-100' src={networkImg} alt="networkImg" />
+              <img className=' testimonial-img' src={networkImg} alt="networkImg" />
             </Col>
           </Row>
         </Container>

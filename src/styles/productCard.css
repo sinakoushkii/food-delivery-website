@@ -50,3 +50,16 @@
         width: 100%;
     }
 }
+
+@media only screen and (max-width:992px){
+    .product__content h5 a{
+        font-size: 0.8rem;
+    }
+    .product__item{
+        padding: 20px;
+    }
+    .addtoCart__btn{
+        padding: 5px 15px;
+        font-size: 0.7rem;
+    }
+}

@@ -1,6 +1,6 @@
 .review__text{
     color: #777;
-    line-height: 30px;
+    line-height: 25px;
     margin: 40px 0;
 }
 
@@ -8,4 +8,17 @@
     width: 50px;
     height: 50px;
     object-fit: cover;
+}
+@media only screen and (max-width:768px){
+    .review__text{
+        font-size: 0.8rem;
+        margin: 20px 0px;
+    }
+    .slider__content h6{
+        font-size: 0.8rem;
+    }
+    .slider__content img{
+        width: 35px;
+        height: 35px;
+    }
 }
