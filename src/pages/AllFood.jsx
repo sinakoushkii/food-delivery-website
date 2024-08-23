@@ -5,11 +5,32 @@ import { Col, Container, Row } from 'reactstrap'
 import products from '../assets/fake-data/product'
 import ProductCart from '../components/Ui/productCart/ProductCart'
 import '../styles/all-foods.css'
+import '../styles/pagination.css'
+import ReactPaginate from 'react-paginate'
 
 export default function AllFood() {
   const [searchTerm, SetSearchTerm] = useState('')
-  const [productData, SetProductData] = useState(products)
+  const [pageNumebr, setPageNumber] = useState(0)
+  
+  const searchedProduct = products.filter(product => {
+    if (searchTerm === '') {
+      return product
+    }
+    if (product.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+      return product
+    }
+  })
 
+  const productPerPage = 8;
+  const visitedPage = pageNumebr * productPerPage
+  const displayPage = searchedProduct.slice(visitedPage, visitedPage + productPerPage)
+  const pageCount = Math.ceil(searchedProduct.length / productPerPage)
+
+
+  
+  const changePage = ({ selected }) => {
+    setPageNumber(selected)
+  }
   return (
     <Helmet title='All foods'>
       <CommonSection title='All foods' />
@@ -38,20 +59,22 @@ export default function AllFood() {
               </div>
             </Col>
             {
-              productData.filter(product=>{
-                if(searchTerm===''){
-                  return product
-                }
-                if(product.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())){
-                  return product
-                }
-              })
-              .map(item => (
+              displayPage.map(item => (
                 <Col className='mb-4' key={item.id} lg='3' md='4' sm='6' xs='6'>
                   <ProductCart item={item} />
                 </Col>
               ))
             }
+
+            <div>
+              <ReactPaginate
+                pageCount={pageCount}
+                onPageChange={changePage}
+                previousLabel='Prev'
+                nextLabel='Next'
+                containerClassName='paginationBtns'
+              />
+            </div>
           </Row>
         </Container>
       </section>
