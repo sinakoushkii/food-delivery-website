@@ -3,7 +3,8 @@ import logo from '../../assets/images/res-logo.png'
 import { Container } from 'reactstrap'
 import { NavLink, Link } from 'react-router-dom'
 import '../../styles/header.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { cartUiAction } from '../../store/shopping-cart/cartUiSlice'
 
 export default function Header() {
 
@@ -28,7 +29,10 @@ export default function Header() {
 
   const menuRef = useRef(null)
   const headerRef = useRef(null)
-  const totalQuantity=useSelector(state=>state.cart.totalQuantity)
+  const totalQuantity = useSelector(state => state.cart.totalQuantity)
+  const dispatch = useDispatch();
+
+  const cartToggle = () => { dispatch(cartUiAction.toggle()) }
   const toggleMenu = () => menuRef.current.classList.toggle('show__menu')
 
   useEffect(() => {
@@ -73,7 +77,7 @@ export default function Header() {
           {/* ======= nav right icons ======= */}
 
           <div className="nav__right d-flex align-items-center gap-4">
-            <span className="cart__icon">
+            <span onClick={cartToggle} className="cart__icon">
               <i className="ri-shopping-cart-line"></i>
               <span className='cart__badge'>{totalQuantity}</span>
             </span>

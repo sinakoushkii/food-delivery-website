@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../../../styles/productCard.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { cartActions } from '../../../store/shopping-cart/cartSlice'
 
 
 export default function ProductCart({ item }) {
     const { id, title, image01, price } = item
     const dispatch=useDispatch()
-   
+    const cartItems = useSelector(state => state.cart.cartItems)
     const addToCart=()=>{
         dispatch(cartActions.addItem({
             id,
