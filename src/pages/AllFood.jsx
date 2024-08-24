@@ -26,10 +26,11 @@ export default function AllFood() {
   const displayPage = searchedProduct.slice(visitedPage, visitedPage + productPerPage)
   const pageCount = Math.ceil(searchedProduct.length / productPerPage)
 
-
+  console.log(displayPage)
   
   const changePage = ({ selected }) => {
     setPageNumber(selected)
+   
   }
   return (
     <Helmet title='All foods'>
@@ -41,7 +42,10 @@ export default function AllFood() {
               <div className='search-widget w-50'>
                 <input
                   value={searchTerm}
-                  onChange={(e) => SetSearchTerm(e.target.value)}
+                  onChange={(e) => {
+                    SetSearchTerm(e.target.value)
+                    setPageNumber(0)
+                  }}
                   type="text"
                   placeholder="I'm looking for..." />
                 <span style={{ cursor: "pointer" }}><i className="ri-search-line"></i></span>
