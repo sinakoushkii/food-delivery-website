@@ -25,8 +25,6 @@ export default function AllFood() {
   const visitedPage = pageNumebr * productPerPage
   const displayPage = searchedProduct.slice(visitedPage, visitedPage + productPerPage)
   const pageCount = Math.ceil(searchedProduct.length / productPerPage)
-
-  console.log(displayPage)
   
   const changePage = ({ selected }) => {
     setPageNumber(selected)
