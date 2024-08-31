@@ -13,10 +13,16 @@ import { cartActions } from '../store/shopping-cart/cartSlice'
 export default function FoodDetails() {
 
   const { id } = useParams()
+  
   const product = productData.find(product => product.id === id)
   const relatedProducts = productData.filter(item => item.category === product.category && item.id !== product.id)
+  
   const [tab, setTab] = useState('desc')
   const [previewImg, setPreviewImg] = useState(product.image01)
+  const [enteredName, setEnteredName] = useState('')
+  const [enteredEmail, setEnteredEmail] = useState('')
+  const [reviewMsg, setReviewMsg] = useState('')
+
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -29,13 +35,16 @@ export default function FoodDetails() {
 
   const addItemToCart = () => {
     dispatch(cartActions.addItem({
-      id:product.id,
-      title:product.title,
-      price:product.price,
-      image01:product.image01
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image01: product.image01
     }))
   }
 
+  const submitHandler=(e)=>{
+    e.preventDefault()
+  }
   return (
     <Helmet title='product-details'>
       <CommonSection title={product.title} />
@@ -67,7 +76,7 @@ export default function FoodDetails() {
                 <h2 className='product__title mb-3'>{product.title}</h2>
                 <span className='product__price'>${product.price}</span>
                 <p className='category mb-5'>Category: <span>{product.category}</span></p>
-                <button onClick={()=>addItemToCart()} className='addtoCart__btn'>Add to cart</button>
+                <button onClick={() => addItemToCart()} className='addtoCart__btn'>Add to cart</button>
               </div>
             </Col>
             <Col lg='12'>
@@ -99,15 +108,21 @@ export default function FoodDetails() {
                       <p className='feedback__text'>Great product</p>
                     </div>
 
-                    <form className='form'>
+                    <form className='form' onSubmit={(e)=>submitHandler(e)}>
                       <div className='form__group'>
-                        <input type="text" placeholder='Enter your name' />
+                        <input 
+                        onChange={(e)=>setEnteredName(e.target.value)} 
+                        type="text" placeholder='Name...' required />
                       </div>
                       <div className='form__group'>
-                        <input type="text" placeholder='Enter your name' />
+                        <input 
+                        onChange={(e)=>setEnteredEmail(e.target.value)} 
+                        type="email" placeholder='Email address...' required />
                       </div>
                       <div className='form__group'>
-                        <textarea rows={5} type='text' placeholder='Enter your name' />
+                        <textarea 
+                        onChange={(e)=>setReviewMsg(e.target.value)} 
+                        rows={5} type='text' placeholder='Message...'  required/>
                       </div>
 
                       <button className='addtoCart__btn' type='submit'>Submit</button>

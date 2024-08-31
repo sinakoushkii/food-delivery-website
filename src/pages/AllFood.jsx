@@ -36,8 +36,8 @@ export default function AllFood() {
       <section>
         <Container>
           <Row>
-            <Col lg='6' md='6' sm='6'>
-              <div className='search-widget w-50'>
+            <Col lg='6' md='6' sm='6' xs='12'>
+              <div className='search-widget'>
                 <input
                   value={searchTerm}
                   onChange={(e) => {
@@ -49,7 +49,7 @@ export default function AllFood() {
                 <span style={{ cursor: "pointer" }}><i className="ri-search-line"></i></span>
               </div>
             </Col>
-            <Col className='mb-5' lg='6' md='6' sm='6'>
+            <Col className='mb-5' lg='6' md='6' sm='6' xs='12'>
               <div className='sorting-widget text-end'>
                 <select className='w-50'>
                   <option>Default</option>

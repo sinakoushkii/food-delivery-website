@@ -16,3 +16,18 @@
 .search-widget input:focus {
     outline: none;
 }
+
+@media only screen and (max-width:768px){
+    .search-widget{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .search-widget input{
+        width: 100%;
+        font-size: 0.8rem;
+    }
+    .sorting-widget select{
+        font-size: 0.8rem;
+        width: 100% !important;
+    }
+}
