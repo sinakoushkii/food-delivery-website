@@ -1,3 +1,6 @@
+.img__item{
+    cursor: pointer;
+}
 .single__product-content{
 padding-left: 50px;
 }
@@ -58,4 +61,17 @@ margin-top: 10px;
 .form__group input:focus,
 .form__group textarea:focus{
 outline: none;
+}
+.user__name{
+font-weight: 600;
+color: #212245;
+}
+.user__email{
+    font-size: 0.8rem;
+}
+.feedback__text{
+    color: #212245b6;
+}
+.related__product-title{
+    font-size: 1.4rem;
 }
