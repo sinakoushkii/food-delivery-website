@@ -95,19 +95,7 @@ export default function FoodDetails() {
                       <p className='user__email'>pitt003@gmail.com</p>
                       <p className='feedback__text'>Great product</p>
                     </div>
-
-                    <div className='review'>
-                      <p className='user__name mb-0'>Pitter smith</p>
-                      <p className='user__email'>pitt003@gmail.com</p>
-                      <p className='feedback__text'>Great product</p>
-                    </div>
-
-                    <div className='review'>
-                      <p className='user__name mb-0'>Pitter smith</p>
-                      <p className='user__email'>pitt003@gmail.com</p>
-                      <p className='feedback__text'>Great product</p>
-                    </div>
-
+                    
                     <form className='form' onSubmit={(e)=>submitHandler(e)}>
                       <div className='form__group'>
                         <input 

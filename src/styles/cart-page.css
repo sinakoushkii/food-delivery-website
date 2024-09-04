@@ -10,3 +10,7 @@ th,td{
 .cart__item-del i{
     cursor: pointer;
 }
+.cart__total{
+    color: #df2020;
+    font-size: 1.5rem;
+}

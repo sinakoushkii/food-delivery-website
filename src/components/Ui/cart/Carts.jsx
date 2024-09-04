@@ -13,10 +13,10 @@ const Carts = () => {
     const totalPrice=useSelector(state=>state.cart.totalAmount)
 
     return (
-        <div className='cart__container'>
+        <div className='cart__container' onClick={() => cartToggle()}>
             <ListGroup className='cart'>
-                <div style={{ cursor: 'pointer' }} onClick={() => cartToggle()} className='cart__close'>
-                    <span><i className="ri-close-line"></i></span>
+                <div style={{ cursor: 'pointer' }}  className='cart__close'>
+                    <span onClick={(e) => { e.stopPropagation(); cartToggle(); }}><i className="ri-close-line"></i></span>
                 </div>
                 <div className='cart__item-list'>
                     {cartItems.length === 0 ?
