@@ -65,9 +65,15 @@ export default function Cart() {
                   <button className='addtoCart__btn me-4'>
                     <Link to='/foods'>Continue shopping</Link>
                   </button>
-                  <button className='addtoCart__btn'>
-                    <Link to='/checkout'>checkout</Link>
-                  </button>
+                  {cartItems.length === 0 ?
+                    <button disabled={true} className='addtoCart__btn btn__disabled'>
+                      Checkout
+                    </button> :
+
+                    <button className='addtoCart__btn'>
+                      <Link to='/checkout'>Checkout</Link>
+                    </button>
+                  }
                 </div>
               </div>
             </Col>

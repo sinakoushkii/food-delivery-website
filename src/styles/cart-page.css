@@ -14,3 +14,6 @@ th,td{
     color: #df2020;
     font-size: 1.5rem;
 }
+.btn__disabled{
+    background-color: #e73232a3;
+}
