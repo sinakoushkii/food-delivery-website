@@ -34,13 +34,7 @@ th,td{
     }
 }
 @media only screen and (max-width: 526px) {
-    /* .button__wrapper{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        flex-basis: 45%;
-        flex-wrap: wrap;
-    } */
+
     .button__wrapper {
         display: flex;
         align-items: center;
