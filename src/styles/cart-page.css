@@ -17,3 +17,69 @@ th,td{
 .btn__disabled{
     background-color: #e73232a3;
 }
+.button__wrapper{
+    display: flex;
+    align-items: center;
+    flex-basis: 45%;
+}
+.addtoCart__btn {
+    margin-right: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .button__wrapper{
+        display: flex;
+        align-items: center;
+        flex-basis: 65%;
+    }
+}
+@media only screen and (max-width: 526px) {
+    /* .button__wrapper{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-basis: 45%;
+        flex-wrap: wrap;
+    } */
+    .button__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-basis: 45%;
+        flex-wrap: wrap;
+    }
+    .addtoCart__btn {
+        margin-right: 0rem;
+    }
+
+    .button__wrapper button{
+        margin-bottom: 0.5rem;
+    }
+    .cart__total{
+        color: #df2020;
+        font-size: 0.9rem;
+    }
+    table tr th{
+        font-size: 10px;
+
+    }
+    table tr td{
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .cart__img-box{
+        width: 40px;
+    }
+    .cart__img-box img{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 300px){
+    table tr td{
+        font-size: 8px;
+        font-weight: bold;
+    }
+    .cart__img-box{
+        width: 20px;
+    }
+}

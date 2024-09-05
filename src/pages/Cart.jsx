@@ -61,19 +61,21 @@ export default function Cart() {
               <div className='mt-5'>
                 <h6>Total: <span className='cart__total'>${totalAmount}</span></h6>
                 <p>Taxes and shipping will be calculated at checkout</p>
-                <div>
-                  <button className='addtoCart__btn me-4'>
-                    <Link to='/foods'>Continue shopping</Link>
-                  </button>
-                  {cartItems.length === 0 ?
-                    <button disabled={true} className='addtoCart__btn btn__disabled'>
-                      Checkout
-                    </button> :
-
+                <div className='d-flex'>
+                  <div className='button__wrapper'>
                     <button className='addtoCart__btn'>
-                      <Link to='/checkout'>Checkout</Link>
+                      <Link to='/foods'>Continue shopping</Link>
                     </button>
-                  }
+                    {cartItems.length === 0 ?
+                      <button disabled={true} className='addtoCart__btn btn__disabled'>
+                        Checkout
+                      </button> :
+
+                      <button className='addtoCart__btn'>
+                        <Link to='/checkout'>Checkout</Link>
+                      </button>
+                    }
+                  </div>
                 </div>
               </div>
             </Col>
